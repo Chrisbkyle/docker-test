@@ -1,0 +1,39 @@
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const http = require('http');
+const dbConnect = require('./db/dbConnect')
+const bodyParser = require('body-parser')
+const PORT = 80;
+
+const server = http.createServer(app);
+
+const whitelist = ['http://localhost:3000'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if(!origin || whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error("Not allowed by CORS"))
+        }
+    },
+    credentials: true,
+}
+
+app.use(cors(corsOptions));
+
+app.use(bodyParser.json())
+
+dbConnect.connectMySQL();
+
+app.get('/', (req, res) => {
+    res.json({message: 'testing dockerfiles'})
+})
+
+const testRouter = require('./routers/testRouter')
+
+app.use('/api', testRouter)  
+
+server.listen(PORT, () => {
+    console.log(`Server running on port: ${PORT}.`)
+})
