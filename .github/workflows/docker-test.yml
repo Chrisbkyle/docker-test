@@ -1,7 +1,5 @@
 name: CI/CD
 
-name: CI/CD
-
 # run the action whenever there is a commit to the main branch
 on:
   push:
