@@ -1,7 +1,7 @@
 FROM node:10 AS ui-build
 WORKDIR /usr/src/app
 COPY client/ ./client/
-RUN cd client && npm install && npm start
+RUN npm install && npm start
 
 FROM node:10 AS server-build
 WORKDIR /root/
