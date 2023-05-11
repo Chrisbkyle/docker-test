@@ -4,23 +4,25 @@ import axios from 'axios'
 
 export default function DisplayForm() {
 
-        const [formData, setFormData] = useState({})
+        const [formData, setFormData] = useState([])
 
         useEffect(() => {
             axios.get('http://localhost:80/api/read')
             .then((response) => {
-                setFormData(response)
-                console.log(JSON.stringify(formData))
+                setFormData(response.data)
+                console.log(response.data)
             }).catch((err) => {
                 console.log(err)
             })
         }, []);
 
-
     return(
         <div>
             <select>
-                <option>test</option>
+                <option>Select User</option>
+                {formData.map((item) => (
+                    <option>{item.firstName + ' ' + item.lastName}</option>
+                ))}
             </select>
             <table>
                 <tr>
