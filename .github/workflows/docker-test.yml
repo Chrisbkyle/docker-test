@@ -37,7 +37,9 @@ jobs:
 
       - name: Set up Docker buildx
         id: buildx
-        uses: docker/setup-buildx-action@latest
+        uses: docker/setup-buildx-action@v2.4.1
+        with:
+          version: v0.7.0
 
       - name: Build and push docker image
         id: docker_build
