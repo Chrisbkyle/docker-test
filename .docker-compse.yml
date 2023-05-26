@@ -2,14 +2,12 @@ version: "3.8"
 services:
   server:
     build: ./server
-    container_name: server
     ports: -80:80
     environment:
       DB_URL: mysql
 
   client:
     build: ./client
-    container_name: client
     ports: -3000:3000
 
     db:
