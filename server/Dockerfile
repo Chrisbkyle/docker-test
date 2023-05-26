@@ -1,8 +1,8 @@
 FROM node:19-alpine
-WORKDIR /server
-COPY . .
-RUN npm run build
+COPY . /usr/share
+WORKDIR /usr/share
+RUN npm install
 
 EXPOSE 80
 
-CMD nodemon index
+CMD [ "node", "index.js"]
