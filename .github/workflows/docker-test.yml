@@ -37,7 +37,7 @@ jobs:
 
       - name: Set up Docker buildx
         id: buildx
-        uses: docker/setup-buildx-action@v0.10.0
+        uses: docker/setup-buildx-action@v2.4.1
 
       - name: Build and push docker image
         id: docker_build
@@ -46,7 +46,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/node-web-app
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockertest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
