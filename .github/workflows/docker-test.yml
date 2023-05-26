@@ -24,7 +24,7 @@ jobs:
         env:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
         with:
-          node-versions: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node-version }}
 
       - name: Install npm packages
         run: npm install
@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./
-          file: ./Dockerfile
+          file: ./docker-compose/yml
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/node-web-app
 
