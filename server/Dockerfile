@@ -1,6 +1,6 @@
 FROM node:19-alpine
 WORKDIR /server
-COPY . /server/
+COPY . .
 RUN npm run build
 
 EXPOSE 80

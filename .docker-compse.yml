@@ -5,8 +5,7 @@ services:
     container_name: server
     ports: -80:80
     environment:
-      - DATABASE_DB=dockertest
-      - DATABASE_USER=root
+      DB_URL: mysql
 
   client:
     build: ./client
@@ -16,3 +15,7 @@ services:
     db:
       image: mysql
       port: -3306:3306
+      volumes:
+        - dockertest:/data/db
+volumes:
+  dockertest:

@@ -1,6 +1,6 @@
 FROM node.16
 WORKDIR /client
-COPY . /client/
+COPY . .
 
 RUN npm run build
 EXPOSE 3000
