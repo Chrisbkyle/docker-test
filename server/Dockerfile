@@ -1,6 +1,5 @@
 FROM node:19-alpine
-COPY . /usr/share
-WORKDIR /usr/share
+COPY . /app
 RUN npm install
 
 EXPOSE 80
