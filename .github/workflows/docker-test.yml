@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./
-          file: ./docker-compose
+          # file: ./docker-compose
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
 
