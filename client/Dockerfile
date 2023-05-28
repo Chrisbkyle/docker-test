@@ -1,7 +1,7 @@
 FROM node:19-alpine
+RUN npm install
 COPY . /app
 
-RUN npm install
 EXPOSE 3000
 
 CMD ["npm", "start"]
