@@ -46,11 +46,6 @@ jobs:
           context: ./
           file: ./client/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test        
-        with:
-          context: ./
-          file: ./server/Dockerfile
-          push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
 
       - name: Image digest
