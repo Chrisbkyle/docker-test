@@ -6,8 +6,8 @@ on:
     branches: [main]
 
 #jobs that will be run when pushed to the main branch
-client:
-  build:
+jobs:
+  client:
     runs-on: ubuntu-latest
     #different environment variables
     strategy:
