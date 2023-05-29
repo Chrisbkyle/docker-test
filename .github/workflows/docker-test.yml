@@ -8,7 +8,7 @@ on:
 #jobs that will be run when pushed to the main branch
 jobs:
   client:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     #different environment variables
     strategy:
       matrix:
@@ -51,7 +51,7 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
   server:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     #different environment variables
     strategy:
       matrix:
