@@ -14,7 +14,7 @@ jobs:
       matrix:
         node version: [16.x] #node version set to 16.x
 
-    #steps taken after push test
+    #steps taken after push
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -46,7 +46,7 @@ jobs:
           context: ./
           file: ./client/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test/client
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
