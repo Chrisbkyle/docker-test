@@ -7,7 +7,7 @@ on:
 
 #jobs that will be run when pushed to the main branch
 jobs:
-  build client:
+  client:
     runs-on: ubuntu-latest
     #different environment variables
     strategy:
@@ -48,7 +48,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test/client
 
-  build server:
+  server:
     runs-on: ubuntu-latest
     #different environment variables
     strategy:
