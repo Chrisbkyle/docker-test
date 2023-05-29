@@ -1,9 +1,9 @@
 FROM node:19-alpine
 WORKDIR /client
-COPY . /client
-
-RUN npm install
+COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+RUN npm install
+
+CMD ["npm start"]
