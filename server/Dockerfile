@@ -6,4 +6,4 @@ EXPOSE 80
 
 RUN npm install
 
-CMD ["node", "index.js"]
+RUN node index.js
