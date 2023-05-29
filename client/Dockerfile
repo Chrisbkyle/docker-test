@@ -1,5 +1,5 @@
 FROM node:19-alpine
-WORKDIR /client
+WORKDIR /
 COPY . .
 
 EXPOSE 3000
