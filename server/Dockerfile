@@ -1,6 +1,6 @@
 FROM node:19-alpine
-WORKDIR /app
-COPY . /app
+WORKDIR /server
+COPY . /server
 
 RUN npm install
 
