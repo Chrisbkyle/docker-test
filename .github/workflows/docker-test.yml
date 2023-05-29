@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 #jobs that will be run when pushed to the main branch
-jobs:
+client:
   build:
     runs-on: ubuntu-latest
     #different environment variables
