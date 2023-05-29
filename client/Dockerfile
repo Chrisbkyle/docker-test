@@ -1,6 +1,6 @@
 FROM node:19-alpine
 WORKDIR /
-COPY . .
+COPY package.json .
 
 EXPOSE 3000
 
