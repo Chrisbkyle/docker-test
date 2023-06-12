@@ -1,12 +1,12 @@
-FROM ubuntu:22.04
+FROM node:16-alpine
+ENV NODE_ENV="development"
 WORKDIR /server
 
 COPY package.json .
 COPY package-lock.json .
 
 
-RUN sudo npm install
-RUN sudo npm install -g nodemon
+RUN npm install
 
 EXPOSE 80
 
