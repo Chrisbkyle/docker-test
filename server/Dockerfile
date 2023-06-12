@@ -1,6 +1,6 @@
 FROM node:12.13.0-alpine AS alpine
-
-WORKDIR /app
+RUN ls -la
+WORKDIR /docker-test
 
 COPY package.json /docker-test/
 RUN npm install
