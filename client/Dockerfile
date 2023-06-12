@@ -1,5 +1,5 @@
 FROM node:12.13.0-alpine AS alpine
-RUN cd app
+RUN cd ..
 RUN ls -la
 WORKDIR /app
 
