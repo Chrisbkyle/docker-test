@@ -5,9 +5,8 @@ COPY package.json .
 COPY package-lock.json .
 
 
-RUN npm init
-RUN npm install
-RUN npm install -g nodemon
+RUN sudo npm install
+RUN sudo npm install -g nodemon
 
 EXPOSE 80
 
