@@ -1,7 +1,7 @@
 FROM node:19-alpine
 WORKDIR /
 
-RUN CD server
+CMD  ["CD", "server"]
 
 COPY package.json .
 
