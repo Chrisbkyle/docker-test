@@ -1,12 +1,11 @@
-FROM node:16-alpine
-RUN  mkdir -p /srv/app/client
-WORKDIR /srv/app/client
+FROM node:12.13.0-alpine AS alpine
 
-COPY package.json /srv/app/client
-COPY package-lock.json /srv/app/client
+WORKDIR /app
+
+COPY package.json .
 
 RUN npm install
 
-COPY . /srv/app/client
+COPY . .
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "test"]
