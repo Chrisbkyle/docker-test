@@ -1,4 +1,5 @@
-FROM ubuntu:22.04
+FROM node:16-alpine
+ENV NODE_ENV="development"
 WORKDIR /
 COPY package.json .
 
