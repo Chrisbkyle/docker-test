@@ -2,7 +2,7 @@ FROM node:12.13.0-alpine AS alpine
 
 WORKDIR /app
 
-COPY /app/package.json .
+COPY package.json /docker-test/
 RUN npm install
 COPY . .
 
