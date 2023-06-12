@@ -1,10 +1,10 @@
 FROM node:12.13.0-alpine AS alpine
-
+RUN mkdir /app/server
 WORKDIR /app
 
-COPY package.json /app
+COPY package.json /app/server
 RUN npm install
-COPY . .
+COPY . /app/server
 
 EXPOSE 3001
 
