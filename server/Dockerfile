@@ -1,10 +1,10 @@
 FROM node:12.13.0-alpine AS alpine
-RUN ls -la
-WORKDIR /docker-test
+# RUN ls -la
+WORKDIR /app
 
-COPY package.json /docker-test/
-RUN npm install
 COPY . .
+RUN npm install
+# COPY . .
 
 EXPOSE 3001
 

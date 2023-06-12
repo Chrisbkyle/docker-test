@@ -2,10 +2,10 @@ FROM node:12.13.0-alpine AS alpine
 
 WORKDIR /app
 
-COPY package.json /docker-test/
+COPY . .
 
 RUN npm install
 
-COPY . .
+# COPY . .
 
 CMD ["npm", "run"]
