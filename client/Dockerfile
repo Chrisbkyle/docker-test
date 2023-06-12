@@ -1,11 +1,12 @@
 FROM node:16-alpine
-ENV NODE_ENV="development"
-WORKDIR /
+RUN  mkdir -p /srv/app/client
+WORKDIR /srv/app/client
 
-COPY package.json .
-COPY package-lock.json .
-COPY . .
+COPY package.json /srv/app/client
+COPY package-lock.json /srv/app/client
 
-EXPOSE 3000
+RUN npm install
+
+COPY . /srv/app/client
 
 CMD ["npm", "start"]

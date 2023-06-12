@@ -1,14 +1,12 @@
 FROM node:16-alpine
-ENV NODE_ENV="development"
-WORKDIR /
+RUN mkdir -p /srv/app/server
+WORKDIR /srv/app/server
 
-COPY package.json .
-COPY package-lock.json .
+COPY package.json /srv/app/server
+COPY package-lock.json /srv/app/server
 
 RUN npm install
 
-COPY . .
-
-EXPOSE 80
+COPY . /srv/app/server
 
 CMD ["node", "index.js"]
