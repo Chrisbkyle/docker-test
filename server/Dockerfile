@@ -1,7 +1,5 @@
 FROM node:19-alpine
-WORKDIR /
-
-CMD  ["CD", "server"]
+WORKDIR /server
 
 COPY package.json .
 
