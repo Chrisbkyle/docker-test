@@ -11,7 +11,7 @@ services:
       - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
     volumes:
       - ./server/src:/srv/app/server/src
-    command: npm run dev
+    command: node index.js
 
   client:
     build: ./client
@@ -26,4 +26,4 @@ services:
       - ./client/src:/srv/app/client/public
     links:
       - server
-    command: npm run start
+    command: npm start
