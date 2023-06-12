@@ -1,12 +1,11 @@
-FROM node:16-alpine
-RUN mkdir -p /srv/app/server
-WORKDIR /srv/app/server
+FROM node:12.13.0-alpine AS alpine
 
-COPY package.json /srv/app/server
-COPY package-lock.json /srv/app/server
+WORKDIR /app
 
+COPY package.json .
 RUN npm install
+COPY . .
 
-COPY . /srv/app/server
+EXPOSE 3001
 
 CMD ["node", "index.js"]
