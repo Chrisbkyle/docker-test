@@ -1,4 +1,4 @@
-FROM node:19-alpine
+FROM ubuntu:22.04
 WORKDIR /
 COPY package.json .
 
