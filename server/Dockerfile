@@ -1,5 +1,5 @@
 FROM ubuntu:22.04
-WORKDIR /app/server
+WORKDIR /server
 
 COPY package.json .
 COPY package-lock.json .
