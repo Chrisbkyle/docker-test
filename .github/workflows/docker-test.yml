@@ -12,7 +12,7 @@ jobs:
     #different environment variables
     strategy:
       matrix:
-        node version: [16.x] #node version set to 16.x
+        node version: [18.x] #node version set to 18.x
 
     #steps taken after push
     steps:
