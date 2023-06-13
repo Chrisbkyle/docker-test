@@ -5,14 +5,23 @@ function addForm(req, res) {
     res.send(req.body)
 }
 
-function getForm(req, res) {
+function getName(req, res) {
     Models.Test.findAll()
+    .then(data => {
+        res.send(data)
+    })
+}
+  
+function getForm(req, res) {
+    console.log(req.body)
+    Models.Test.findOne()
     .then(data => {
         res.send(data)
     })
 }
 
 module.exports = {
+    getName,
     addForm,
     getForm
 }

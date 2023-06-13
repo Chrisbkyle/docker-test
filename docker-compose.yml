@@ -16,3 +16,10 @@ services:
     ports:
       - 3001:3001
     container_name: server
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example

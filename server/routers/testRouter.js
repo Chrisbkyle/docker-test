@@ -6,7 +6,11 @@ router.post('/add', (req, res) => {
     controller.testController.addForm(req, res);  
 })
 
-router.get('/read', (req, res) => {
+router.get('/name', (req, res) => {
+    controller.testController.getName(req, res);
+})
+
+router.post('/read', (req, res) => {
     controller.testController.getForm(req, res);
 })
    
