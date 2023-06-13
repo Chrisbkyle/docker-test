@@ -6,6 +6,7 @@ services:
       context: ./client
     ports:
       - 3000:3000
+    stdin_open: true
     container_name: client
 
   server:

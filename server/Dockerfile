@@ -1,6 +1,6 @@
-FROM node:12.13.0-alpine AS alpine
+FROM node:14-alpine AS alpine
 # RUN ls -la
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY . .
 RUN npm install

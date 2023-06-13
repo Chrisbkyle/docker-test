@@ -7,9 +7,11 @@ on:
 jobs:
   build-client:
     runs-on: ubuntu latest
+
     steps:
       - run: echo Hello world!
   build-server:
     runs-on: ubuntu latest
+
     steps:
       - run: echo Hello world!
