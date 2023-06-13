@@ -19,6 +19,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+    - name: Start containers
+        run: docker-compose -f "docker-compose.yml" up -d --build
+
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         env:
