@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize'); 
 
 const sequelize = new Sequelize('dockertest', 'root', 'IOD-sw-221011', {
-    host: 'localhost',
+    host: '3306',
     dialect: 'mysql'
 });
 
