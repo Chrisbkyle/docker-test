@@ -7,21 +7,6 @@ on:
 
 #jobs that will be run when pushed to the main branch
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    #different environment variables
-    strategy:
-      matrix:
-        node version: [18.x] #node version set to 18.x
-
-    #steps taken after push
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # - name: Start containers
-      #   run: docker-compose -f "docker-compose.yml" up -d --build
-jobs:
   client:
     runs-on: ubuntu-latest
 
