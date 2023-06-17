@@ -43,7 +43,7 @@ jobs:
           context: ./
           file: ./client/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test/client
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
@@ -86,7 +86,7 @@ jobs:
           context: ./
           file: ./server/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test/server
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

@@ -4,8 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 RUN npm install
-# COPY . .
 
 EXPOSE 3001
 
-CMD ["node", "index.js"]
+CMD ["nodemon", "index.js"]
