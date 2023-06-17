@@ -40,8 +40,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v4
         with:
-          context: ./client
-          file: ./Dockerfile
+          context: ./
+          file: ./client/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test/client
 
@@ -83,8 +83,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v4
         with:
-          context: ./server
-          file: ./Dockerfile
+          context: ./
+          file: ./server/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test/server
 
