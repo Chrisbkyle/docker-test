@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react' 
+import React, { useState } from 'react' 
 import '../App.css'
 import axios from 'axios'
 
@@ -26,7 +26,7 @@ export default function Form() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(e)
-        axios.post('http://localhost:80/api/add', formData)
+        axios.post('http://localhost:3001/api/add', formData)
         .then(response => console.log(response))
     }
 

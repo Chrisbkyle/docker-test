@@ -4,9 +4,10 @@ const cors = require('cors');
 const http = require('http');
 const dbConnect = require('./db/dbConnect')
 const bodyParser = require('body-parser')
-const PORT = 80;
+require('dotenv').config();
+const PORT = process.env.PORT || 3001;
 
-const server = http.createServer(app);
+const server = http.createServer(app);  
 
 const whitelist = ['http://localhost:3000'];
 const corsOptions = {

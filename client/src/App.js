@@ -1,7 +1,6 @@
 import './App.css';
 import Form from './components/Form'
 import DisplayForm from './components/DisplayForm'
-import axios from 'axios'
 
 function App() {
   return (
