@@ -9,6 +9,10 @@ export default function DisplayForm() {
     const [formDisplay, setFormDisplay] = useState({})
 
 
+    // 
+    //      Populate Dropdown Menu
+    // 
+
     useEffect(() => {
         axios.get('http://localhost:3001/api/name')
         .then((response) => {
@@ -19,7 +23,9 @@ export default function DisplayForm() {
         })
     }, []);
 
-        
+    // 
+    //        Sets information to get form data
+    // 
 
     const handleNameSelection = (e) => {
         const value = e.target.value.split(" ")
@@ -29,16 +35,18 @@ export default function DisplayForm() {
                 firstName: fName,
                 lastName: lName
             })
-        axios.post('http://localhost:3001/api/read', selected)
-            .then(response => setFormDisplay(response.data))
-            .then(console.log(formDisplay))
     }
 
-    console.log(formDisplay)
+    const handleClick = (e) => {
+        axios.post('http://localhost:3001/api/read', e)
+        .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
+    }
+
+    console.log(selected)
 
     return(
         <div>
-            <select onChange={e => handleNameSelection(e)} value={selected}>
+            <select onChange={e => handleNameSelection(e)}>
                 <option>Select User</option>
                 {dropDownData.map((item) => (
                     <option name="nameToDisplay">
@@ -46,6 +54,7 @@ export default function DisplayForm() {
                     </option>
                 ))}
             </select>
+            <button onClick={() => handleClick(selected)}>Display User</button>
             <table>
                 <tr>
                     <td>First Name</td>

@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config();
 const PORT = process.env.PORT || 3001;
 
-const server = http.createServer(app);  
+const server = http.createServer(app);    
 
 const whitelist = ['http://localhost:3000'];
 const corsOptions = {

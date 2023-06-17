@@ -14,4 +14,4 @@ router.post('/read', (req, res) => {
     controller.testController.getForm(req, res);
 })
    
-module.exports = router  
+module.exports = router
