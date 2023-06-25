@@ -36,14 +36,18 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v2.4.1
 
-      - name: Build and push docker image
-        id: docker_build
-        uses: docker/build-push-action@v4
-        with:
-          context: ./
-          file: ./docker-compose.yml
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
+      # - name: Build and push docker image
+      #   id: docker_build
+      #   uses: docker/build-push-action@v4
+      #   with:
+      #     context: ./
+      #     file: ./docker-compose.yml
+      #     push: true
+      #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
+      - name: Docker Compose Build
+        run: docker compose up --build
+      - name: Docker compose Push
+        run: docker compose push
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
