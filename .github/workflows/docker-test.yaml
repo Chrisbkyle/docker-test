@@ -44,10 +44,10 @@ jobs:
       #     file: ./docker-compose.yml
       #     push: true
       #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-test
-      - name: Docker Compose Build
-        run: docker compose up --build
-      - name: Docker compose Push
-        run: docker compose push
+      - name: Build the stack
+        run: docker-compose up -d
+      - name: Test
+        run: docker run --network container:webapp-frontend appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
