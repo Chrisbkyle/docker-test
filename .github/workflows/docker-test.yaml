@@ -23,8 +23,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install npm packages
-        run: npm install
+      - name: Install npm packages client
+        run: cd client && npm install
+      - name: Install npm packages server
+        run: cd server && npm install
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2.1.0
