@@ -19,6 +19,7 @@ services:
     build:
       context: ./server 
       dockerfile: Dockerfile
+    image: christopherkyle/docker-test-server
     env_file: 
       - ./server/.env
     ports:
@@ -36,6 +37,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./client
+    image: christopherkyle/docker-test-client
     ports:
       - 3000:3000
     stdin_open: true
