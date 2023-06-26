@@ -6,6 +6,6 @@ async function init() {
 
 init();
 
-module.exports = {
+module.exports = {  
     Test
 }
