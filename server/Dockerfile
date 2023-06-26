@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM node:20-alpine AS alpine
 # RUN ls -la
 WORKDIR /usr/src/app
 
