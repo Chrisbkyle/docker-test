@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 3001;
 
 const server = http.createServer(app);    
 
-const whitelist = ['http://localhost:3000', 'http://3.25.114.242/'];
+// const whitelist = ['http://localhost:3000', 'http://3.25.114.242/'];
+const whitelist = ['http://3.25.114.242/'];
 const corsOptions = {
     origin: function (origin, callback) {
         if(!origin || whitelist.indexOf(origin) !== -1) {
