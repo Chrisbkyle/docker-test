@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+  nginx:
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "80:80"
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    # ports:
+    #   - "3000:3000"
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    # ports:
+    # - "3001:3001"
+    container_name: server
+    env_file:
+      - ./.env
+  mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - ""
+    volumes:
+      -
+    env_file:
+      -./.env
