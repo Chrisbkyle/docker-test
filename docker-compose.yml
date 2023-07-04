@@ -2,7 +2,7 @@ version: "3"
 services:
 
   db:
-    image: mysql:3.8
+    image: mysql:latest
     container_name: db
     restart: unless-stopped
     env_file: 
@@ -42,6 +42,18 @@ services:
       - 3000:3000
     stdin_open: true
     container_name: client
+  
+  nginx:
+    depends_on:
+      - server
+      - client
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    image: christopherkyle/docker-test-nginx
+    ports:
+      - "3050:80"
 
 
 
