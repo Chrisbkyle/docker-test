@@ -32,7 +32,7 @@ export default function Form() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(e)
-        axios.post('http://3.25.114.242/server/api/add', formData)
+        axios.post('/server/api/add', formData)
         .then(response => console.log(response))
     }
 
