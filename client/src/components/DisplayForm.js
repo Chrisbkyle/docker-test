@@ -23,7 +23,7 @@ export default function DisplayForm() {
     //     })
     // }, []);
     useEffect(() => {
-        axios.get('http://3.25.114.242/3.25.114.242//api/name')
+        axios.get('http://3.25.114.242/http://3.25.114.242//api/name')
         .then((response) => {
             setDropDownData(response.data)
             console.log(response.data)
@@ -51,7 +51,7 @@ export default function DisplayForm() {
     //     .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
     // }
     const handleClick = (e) => {
-        axios.post('http://3.25.114.242/3.25.114.242/api/read', e)
+        axios.post('http://3.25.114.242/http://3.25.114.242/api/read', e)
         .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
     }
 
