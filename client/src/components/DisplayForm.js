@@ -13,17 +13,8 @@ export default function DisplayForm() {
     //      Populate Dropdown Menu
     // 
 
-    // useEffect(() => {
-    //     axios.get('http://localhost:3001/api/name' || 'http://3.25.114.242/server/api/name')
-    //     .then((response) => {
-    //         setDropDownData(response.data)
-    //         console.log(response.data)
-    //     }).catch((err) => {
-    //         console.log(err)
-    //     })
-    // }, []);
     useEffect(() => {
-        axios.get('3.25.114.242/api/name')
+        axios.get('http://localhost:3001/api/name')
         .then((response) => {
             setDropDownData(response.data)
             console.log(response.data)
@@ -31,6 +22,15 @@ export default function DisplayForm() {
             console.log(err)
         })
     }, []);
+    // useEffect(() => {
+    //     axios.get('3.25.114.242/api/name')
+    //     .then((response) => {
+    //         setDropDownData(response.data)
+    //         console.log(response.data)
+    //     }).catch((err) => {
+    //         console.log(err)
+    //     })
+    // }, []);
 
     // 
     //        Sets information to get form data
@@ -46,14 +46,14 @@ export default function DisplayForm() {
             })
     }
 
-    // const handleClick = (e) => {
-    //     axios.post('http://localhost:3001/api/read' || 'http://3.25.114.242/server/api/read', e)
-    //     .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
-    // }
     const handleClick = (e) => {
-        axios.post('3.25.114.242/api/read', e)
+        axios.post('http://localhost:3001/api/read', e)
         .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
     }
+    // const handleClick = (e) => {
+    //     axios.post('3.25.114.242/api/read', e)
+    //     .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
+    // }
 
     console.log(selected)
 

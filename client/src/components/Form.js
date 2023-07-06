@@ -23,18 +23,18 @@ export default function Form() {
         console.log(formData)
     }
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     // console.log(e)
-    //     axios.post('http://localhost:3001/api/add' || 'http://3.25.114.242/server/api/add', formData)
-    //     .then(response => console.log(response))
-    // }
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(e)
-        axios.post('3.25.114.242/api/add', formData)
+        axios.post('http://localhost:3001/api/add', formData)
         .then(response => console.log(response))
     }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     // console.log(e)
+    //     axios.post('3.25.114.242/api/add', formData)
+    //     .then(response => console.log(response))
+    // }
 
 
 
