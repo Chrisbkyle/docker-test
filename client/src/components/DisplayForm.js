@@ -23,7 +23,7 @@ export default function DisplayForm() {
     //     })
     // }, []);
     useEffect(() => {
-        axios.get('3.25.114.242/api/name')
+        axios.get('/name')
         .then((response) => {
             setDropDownData(response.data)
             console.log(response.data)
@@ -51,7 +51,7 @@ export default function DisplayForm() {
     //     .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
     // }
     const handleClick = (e) => {
-        axios.post('3.25.114.242/api/read', e)
+        axios.post('/read', e)
         .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
     }
 
