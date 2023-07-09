@@ -3,7 +3,9 @@ import '../App.css'
 import axios from 'axios'
 
 export default function DisplayForm() {
-
+    
+    const deployedApi = 'http://13.239.37.239/server/'
+    const localApi = 'http://localhost:3001'
     const [dropDownData, setDropDownData] = useState([])
     const [selected, setSelected] = useState({})
     const [formDisplay, setFormDisplay] = useState({})
@@ -23,7 +25,7 @@ export default function DisplayForm() {
     //     })
     // }, []);
     useEffect(() => {
-        axios.get('http://13.239.37.239/server/api/name')
+        axios.get(deployedApi + 'api/name')
         .then((response) => {
             setDropDownData(response.data)
             console.log(response.data)
@@ -51,7 +53,7 @@ export default function DisplayForm() {
     //     .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
     // }
     const handleClick = (e) => {
-        axios.post('http://13.239.37.239/server/api/read', e)
+        axios.post(deployedApi + 'api/read', e)
         .then(response => (formDisplay.lastName != response.data.lastName) ? setFormDisplay(response.data) : setFormDisplay(formDisplay))
     }
 

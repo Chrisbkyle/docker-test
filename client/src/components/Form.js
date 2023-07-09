@@ -5,6 +5,8 @@ import axios from 'axios'
 
 export default function Form() {
 
+    const deployedApi = 'http://13.239.37.239/server/'
+    const localApi = 'http://localhost:3001'
     const [formData, setFormData] = useState({ 
         firstName: '',
         lastName: '',
@@ -32,7 +34,7 @@ export default function Form() {
     const handleSubmit = (e) => {
         // e.preventDefault();
         // console.log(e)
-        axios.post('http://13.239.37.239/server/api/add', formData)
+        axios.post(deployedApi + 'server/api/add', formData)
         .then(response => console.log(response))
     }
 

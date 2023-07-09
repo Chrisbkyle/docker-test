@@ -9,11 +9,11 @@ const PORT = process.env.PORT || 3001;
 
 const server = http.createServer(app);    
 
-const whitelistDeployed = ['http://13.239.37.239/'];
-const whitelistLocal = ['http://localhost:3000'];
+const whitelist = ['http://13.239.37.239/'];
+// const whitelist = ['http://localhost:3000'];
 const corsOptions = {
     origin: function (origin, callback) {
-        if(!origin || whitelistLocal.indexOf(origin) !== -1 || whitelistDeployed.indexOf(origin) !== -1) {
+        if(!origin || whitelist.indexOf(origin) !== -1) {
             callback(null, true)
         } else {
             callback(new Error("Not allowed by CORS"))
